@@ -1,7 +1,14 @@
 .container-box {
-    background-color: #fff;
-    padding: 40px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px -1px rgba(0, 0, 0, .2), 0 4px 5px 0 rgba(0, 0, 0, .14), 0 1px 10px 0 rgba(0, 0, 0, .12);
-    // min-height: calc(100vh - 237px);
+    position: absolute;
+    width: calc(100% - 70px);
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    height: calc(100vh - 270px);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12);
+    background-color: #FFFFFF;
+    border: 1px solid #EEF0F2;
+    padding: 0;
 }

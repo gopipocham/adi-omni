@@ -1,19 +1,15 @@
 <!-- Starter application -->
 <mat-sidenav-container id="container" fullscreen>
-  <mat-toolbar>My App</mat-toolbar>
-  <div style="border:1px solid red; display: flex;">
-    <div style="width:60px">
-      aa
-    </div>
-    <mat-sidenav-content>
-      <div>
-        <div class="main-body" style="width: 100%;">
-          <router-outlet></router-outlet>
+    <div class="header">My App</div>
+    <div class="main-container">
+        <div class="main-container-l">
+            aa
         </div>
-      </div>
-    </mat-sidenav-content>
-    <div style="width:60px">
-      aa
+        <mat-sidenav-content class="main-container-c">
+            <router-outlet></router-outlet>
+        </mat-sidenav-content>
+        <div class="main-container-r">
+            aa
+        </div>
     </div>
-  </div>
 </mat-sidenav-container>

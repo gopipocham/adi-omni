@@ -1,9 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
-@import url('https://fonts.googleapis.com/css?family=Quicksand:400,500');
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
 html,
 body {
-    font-family: 'Quicksand', sans-serif!important;
-    background-color: #F4F5FA
+    font-family: 'Roboto', sans-serif;
+    background-color: #F4F5FA;
+    margin: 0;
+}
+
+.mat-tab-label-active {
+    color: #2867FA !important;
+}
+
+.mat-tab-label {
+    opacity: 1!important;
+}
+
+.mat-tab-body-content {
+    height: calc(100vh - 398px)!important;
+    overflow: auto;
+    padding: 40px;
 }

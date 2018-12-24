@@ -1,39 +1,30 @@
-.logout-btn {
-    width: 100%;
-    position: absolute;
-    bottom: 10px;
-  }
-  
-  .base {
-    box-shadow: 0 -1px 0 0 #e6eaee;
-    .font-15 {
-      letter-spacing: 2.4px;
-    }
-  }
-  
-  .upic {
+.header {
+    padding: 20px;
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #F0F0F0;
+}
+
+.main-container {
     display: flex;
-    flex-direction: row;
-    cursor: pointer;
-    .upic-image {
-        border-radius: 50%;
+    height: calc(100vh - 60px);
+    .main-container-l {
+        width: 60px;
+        flex: 60px 0 0;
+        background-color: #fff;
+        border-right: 1px solid #F0F0F0;
     }
-  }
-  
-  i.down {
-    transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
-    border: solid #ffffff;
-    border-width: 0 1px 1px 0;
-    display: inline-block;
-    padding: 2px;
-    position: relative;
-    top: -3px;
-    margin: 0 5px;
-  }
-  
-  .notify-upic {
-    display: flex;
-    flex-direction: row;
-    margin-left:auto;
-  }
+    .main-container-c {
+        flex: calc(100% - 192px) 0 0;
+        padding: 0 35px;
+        position: relative;
+        router-outlet {
+            width: 100%;
+        }
+    }
+    .main-container-r {
+        width: 60px;
+        flex: 60px 0 0;
+        background-color: #fff;
+        border-left: 1px solid #F0F0F0;
+    }
+}
