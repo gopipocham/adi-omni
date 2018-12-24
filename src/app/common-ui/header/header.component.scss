@@ -1,0 +1,39 @@
+.logout-btn {
+    width: 100%;
+    position: absolute;
+    bottom: 10px;
+  }
+  
+  .base {
+    box-shadow: 0 -1px 0 0 #e6eaee;
+    .font-15 {
+      letter-spacing: 2.4px;
+    }
+  }
+  
+  .upic {
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+    .upic-image {
+        border-radius: 50%;
+    }
+  }
+  
+  i.down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    border: solid #ffffff;
+    border-width: 0 1px 1px 0;
+    display: inline-block;
+    padding: 2px;
+    position: relative;
+    top: -3px;
+    margin: 0 5px;
+  }
+  
+  .notify-upic {
+    display: flex;
+    flex-direction: row;
+    margin-left:auto;
+  }
