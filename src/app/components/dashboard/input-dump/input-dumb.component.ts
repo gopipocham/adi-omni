@@ -2,8 +2,8 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-input-dump',
-  templateUrl: './input-dump.component.html',
-  styleUrls: ['./input-dump.component.scss']
+  templateUrl: './input-dumb.component.html',
+  styleUrls: ['./input-dumb.component.scss']
 })
 export class InputDumpComponent implements OnInit {
   numberOfNodes = ['4','8']

@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { InputDumpComponent } from './input-dump.component';
+import { TableDumpComponent } from './table-dump.component';
 
-describe('InputDumpComponent', () => {
-  let component: InputDumpComponent;
-  let fixture: ComponentFixture<InputDumpComponent>;
+describe('TableDumpComponent', () => {
+  let component: TableDumpComponent;
+  let fixture: ComponentFixture<TableDumpComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ InputDumpComponent ]
+      declarations: [ TableDumpComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(InputDumpComponent);
+    fixture = TestBed.createComponent(TableDumpComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
