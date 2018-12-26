@@ -2,13 +2,14 @@
 
 @charset "utf-8";
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700');
 @import 'assets/css/variables';
 body {
     font-family: 'Roboto', sans-serif;
     background-color: $white;
     margin: 0;
     background-color: #fafbfc;
+    font-weight: 400!important;
 }
 
 .mat-tab-label-active {
@@ -20,9 +21,9 @@ body {
 }
 
 .mat-tab-body-content {
-    height: calc(100vh - 398px)!important;
+    height: calc(100vh - 370px)!important;
     overflow: auto;
-    padding: 100px 40px;
+    padding: 45px 35px;
 }
 
 .pull-left {
@@ -132,4 +133,66 @@ body {
 
 .pt100 {
     padding-top: 100px;
+}
+
+.pt20 {
+    padding-top: 20px;
+}
+
+.adi-table {
+    border: 1px solid #eef0f2;
+    border-collapse: collapse;
+    font-size: 12px;
+    th.mat-header-cell {
+        width: 8.333333333333333%;
+        text-align: center !important;
+        padding: 13px 10px;
+        opacity: 1;
+        color: #000;
+        background-color: #F1F2F3;
+        border: 1px solid #e1e3e5;
+        font-weight: 500;
+    }
+    td {
+        background-color: #f9fafb;
+        text-align: center !important;
+        border: 1px solid #eef0f2;
+        padding: 5px 0!important;
+        font-size: 12px;
+    }
+    tfoot {
+        td {
+            background-color: #f1f2f3;
+            border: 1px solid #e1e3e5;
+        }
+    }
+}
+
+
+/* width */
+
+::-webkit-scrollbar {
+    width: 6px;
+    border-radius: 50px
+}
+
+
+/* Track */
+
+ ::-webkit-scrollbar-track {
+    // background: #f1f1f1;
+}
+
+
+/* Handle */
+
+ ::-webkit-scrollbar-thumb {
+    background: #F1F2F3;
+}
+
+
+/* Handle on hover */
+
+ ::-webkit-scrollbar-thumb:hover {
+    background: #F1F2F3;
 }
