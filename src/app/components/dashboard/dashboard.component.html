@@ -1,13 +1,16 @@
 <div class="body-container">
     <div class="container-box form-section">
-      <mat-tab-group>
-        <mat-tab label="Inputs">
-          <app-input-dump (postNodeValues)="postNodeValue($event)"></app-input-dump>
-        </mat-tab>
-        <mat-tab label="Tables">
-        <app-table-dump></app-table-dump>  
-        </mat-tab>
-        <mat-tab label="Graphs"> Content 3 </mat-tab>
-      </mat-tab-group>
+        <div class="tab-icons">
+            <img src="../../../assets/images/trigger-vertical-medium.svg" />
+            <img src="../../../assets/images/search-medium.svg" />
+            <img src="../../../assets/images/save-medium.svg" />
+        </div>
+        <mat-tab-group>
+            <mat-tab label="Inputs">
+                <app-input-dump (postNodeValues)="postNodeValue($event)"></app-input-dump>
+            </mat-tab>
+            <mat-tab label="Tables"> Content 2 </mat-tab>
+            <mat-tab label="Graphs"> Content 3 </mat-tab>
+        </mat-tab-group>
     </div>
 </div>
