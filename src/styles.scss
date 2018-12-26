@@ -1,16 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
 
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
+@charset "utf-8";
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
-html,
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
+@import 'assets/css/variables';
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #F4F5FA;
+    background-color: $white;
     margin: 0;
+    background-color: #fafbfc;
 }
 
 .mat-tab-label-active {
-    color: #2867FA !important;
+    color: $blue!important;
 }
 
 .mat-tab-label {
@@ -21,4 +23,20 @@ body {
     height: calc(100vh - 398px)!important;
     overflow: auto;
     padding: 40px;
+}
+
+.pull-left {
+    margin-right: auto;
+}
+
+.pull-right {
+    margin-left: auto;
+}
+
+.mr10 {
+    margin-right: 10px
+}
+
+.mt5 {
+    margin-top: 5px
 }
