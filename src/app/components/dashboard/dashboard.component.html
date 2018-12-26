@@ -1,59 +1,16 @@
 <div class="body-container">
     <div class="container-box form-section">
         <div class="tab-icons">
+            <img src="../../../assets/images/trigger-vertical-medium.svg" />
+            <img src="../../../assets/images/search-medium.svg" />
             <img src="../../../assets/images/save-medium.svg" />
         </div>
         <mat-tab-group>
             <mat-tab label="Inputs">
-                <div>
-                    <label>URL of Test Application</label>
-                    <mat-form-field appearance="outline">
-                        <input matInput placeholder="">
-                    </mat-form-field>
-                    <label>Project Name</label>
-                    <mat-form-field appearance="outline">
-                        <input matInput placeholder="">
-                    </mat-form-field>
-                </div>
-
-                <div>
-                    <mat-form-field>
-                        <label>Starting Number of Nodes</label>
-                        <mat-select name="tenant" id="tenantname">
-                            <mat-option value="omniwyse"></mat-option>
-                        </mat-select>
-                    </mat-form-field>
-                    <mat-form-field>
-                        <label>Max No.of Nodes</label>
-                        <mat-select name="tenant" id="tenantname">
-                            <mat-option value="omniwyse"></mat-option>
-                        </mat-select>
-                    </mat-form-field>
-                    <mat-form-field>
-                        <label>Node Increment Step Size</label>
-                        <mat-select name="tenant" id="tenantname">
-                            <mat-option value="omniwyse"></mat-option>
-                        </mat-select>
-                    </mat-form-field>
-                    <mat-form-field>
-                        <label>Optimization Time Limit (Min)</label>
-                        <mat-select name="tenant" id="tenantname">
-                            <mat-option value="omniwyse"></mat-option>
-                        </mat-select>
-                    </mat-form-field>
-                    <mat-form-field>
-                        <label>Overall Run Time(Min)</label>
-                        <mat-select name="tenant" id="tenantname">
-                            <mat-option value="omniwyse"></mat-option>
-                        </mat-select>
-                    </mat-form-field>
-                </div>
-                <button mat-raised-button color="primary">Run New Test</button>
+                <app-input-dump (postNodeValues)="postNodeValue($event)"></app-input-dump>
             </mat-tab>
             <mat-tab label="Tables"> Content 2 </mat-tab>
             <mat-tab label="Graphs"> Content 3 </mat-tab>
         </mat-tab-group>
-
-
     </div>
 </div>
