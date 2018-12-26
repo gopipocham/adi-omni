@@ -1,17 +1,46 @@
+@import '../../../assets/css/variables';
 .header {
-    padding: 20px;
-    background-color: #FFFFFF;
-    border-bottom: 1px solid #F0F0F0;
+    background-color: $white;
+    border-bottom: $border;
+    display: flex;
+    .logo-set,
+    .login-set {
+        display: flex;
+        flex-direction: row;
+    }
+    .logo {
+        border-right: $border;
+        padding: 17px;
+    }
+    .header-name {
+        padding: 20px 35px 0 35px;
+        display: flex;
+        color: $blue;
+        border-right: $border;
+        font-size: 12px;
+        img {
+            width: 18px;
+            height: 19px;
+        }
+    }
+    .login-img {
+        padding: 16px
+    }
+    .login-txt {
+        padding: 25px 35px 0 0;
+        color: #DFE3E6;
+        font-size: 11px;
+    }
 }
 
 .main-container {
     display: flex;
-    height: calc(100vh - 60px);
+    height: calc(100vh - 66px);
     .main-container-l {
         width: 60px;
         flex: 60px 0 0;
-        background-color: #fff;
-        border-right: 1px solid #F0F0F0;
+        background-color: $white;
+        border-right: $border;
     }
     .main-container-c {
         flex: calc(100% - 192px) 0 0;
@@ -24,7 +53,15 @@
     .main-container-r {
         width: 60px;
         flex: 60px 0 0;
-        background-color: #fff;
-        border-left: 1px solid #F0F0F0;
+        background-color: $white;
+        border-left: $border;
+    }
+}
+
+.right-bar-links {
+    display: flex;
+    flex-direction: column;
+    img {
+        padding: 22px 20px;
     }
 }
