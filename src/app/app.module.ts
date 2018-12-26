@@ -7,15 +7,17 @@ import { AppRoutingModule } from './/app-routing.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { InputDumpComponent } from './components/dashboard/input-dump/input-dump.component';
+import { InputDumpComponent } from './components/dashboard/input-dump/input-dumb.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TableDumpComponent } from './components/dashboard/table-dump/table-dumb.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     DashboardComponent,
-    InputDumpComponent
+    InputDumpComponent,
+    TableDumpComponent
   ],
   imports: [
     BrowserModule,
