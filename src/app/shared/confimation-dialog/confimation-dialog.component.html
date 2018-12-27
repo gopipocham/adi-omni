@@ -1,0 +1,11 @@
+<div mat-dialog-content class="custom-width-modal">
+  <div class="modal-body">
+      <div class="input-group v-center">
+         Success! Your run was completed
+      </div>
+  </div>
+  <div class="modal-footer">
+      <button (click)=" onNoClick()" tabindex="-1" class="btn text-center add-catbtn btn-fullwidth">CLOSE </button>
+      <button type="button" class="btn btn-primary" [mat-dialog-close]="true" tabindex="2">VIEW OUTPUT TABLE </button>
+  </div>
+</div>

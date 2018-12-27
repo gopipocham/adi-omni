@@ -49,20 +49,23 @@ const ELEMENT_DATA: PeriodicElement[] = [
   styleUrls: ['./table-dumb.component.scss']
 })
 export class TableDumpComponent implements OnInit {
-  displayedColumns: string[] = ['equipments', 'lines','numberOfObjects', 'numberOfRulesChecked','equivalency','isTimedOut','equipmentPlacementTime','pipeRouterTime','equivalencyTime','totalElpsedTime','throughput'];
+  displayedColumns: string[] = ['iterationcount','equipments', 'lines','numberOfObjects', 'numberOfRulesChecked','equivalency','isTimedOut','equipmentPlacementTime','pipeRouterTime','equivalencyTime','totalElpsedTime','throughput'];
   dataSource: any[];
+  totalobj = {};
   constructor() { }
 @Input() testdata: any;
 
   ngOnInit() {
     console.log(this.testdata);
   }
-  
-
   ngOnChanges() {
     console.log(this.testdata);
     this.dataSource = this.testdata;
-    
+    if ( this.testdata) {
+      this.totalobj = this.testdata[this.testdata.length-1];
+      console.log(this.totalobj);
+      this.dataSource.splice(-1,1)
+    }
   }
 
 }

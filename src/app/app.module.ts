@@ -11,6 +11,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { InputDumpComponent } from './components/dashboard/input-dump/input-dumb.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TableDumpComponent } from './components/dashboard/table-dump/table-dumb.component';
+import { ConfimationDialogComponent } from './shared/confimation-dialog/confimation-dialog.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,11 @@ import { TableDumpComponent } from './components/dashboard/table-dump/table-dumb
     HeaderComponent,
     DashboardComponent,
     InputDumpComponent,
-    TableDumpComponent
+    TableDumpComponent,
+    ConfimationDialogComponent,
+  ],
+  entryComponents: [
+    ConfimationDialogComponent
   ],
   imports: [
     BrowserModule,
