@@ -7,13 +7,15 @@ import { TestService } from 'src/app/services/test.service';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-
+  nodedata: any[];
   constructor(private testService : TestService) { }
   ngOnInit() {
   }
   postNodeValue(testnodes): void{
     this.testService.postTestValues(testnodes).subscribe((data: any) => {
-      console.log(data);
+
+      this.nodedata= data.results;
+      console.log(this.nodedata);
     });
     
   }

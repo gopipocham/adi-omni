@@ -1,32 +1,45 @@
 import { Component, OnInit } from '@angular/core';
+import { Input } from '@angular/core';
 
 
 export interface PeriodicElement {
-  equipmentnumber: number;
+  // equipments: number;
+  // iterationcount: number;
+  // noofpipe: number;
+  // throughput: number;
+  // objects: number;
+  // equivalencyrules: number;
+  // equivalency: string;
+  // timeout: string;
+  // equipment: number;
+  // pipe:number;
+  // equivalencyTime:number;
+  // totaltime:number
   iterationcount: number;
-  noofpipe: number;
-  throughput: number;
-  objects: number;
-  equivalencyrules: number;
+  equipments: number;
+  lines:number;
+  numberOfObjects: number;
+  numberOfRulesChecked: number;
   equivalency: string;
-  timeout: string;
-  equipment: number;
-  pipe:number;
-  equivalencyTime:number;
-  totaltime:number
+  isTimedOut: string;
+  equipmentPlacementTime: number;
+  pipeRouterTime: number;
+  equivalencyTime: number;
+  totalElpsedTime: number;
+  throughput: number;
 }
 
 const ELEMENT_DATA: PeriodicElement[] = [
-  {iterationcount: 1, equipmentnumber: 4, noofpipe: 10, objects:14, equivalencyrules:106, equivalency: 'Y', timeout:' N',equipment:4,pipe:0,equivalencyTime:0 ,totaltime:0.07, throughput: 334},
-  {iterationcount: 1, equipmentnumber: 4, noofpipe: 10, objects:14, equivalencyrules:106, equivalency: 'Y', timeout:' N',equipment:4,pipe:0,equivalencyTime:0 ,totaltime:0.07, throughput: 334},
-  {iterationcount: 1, equipmentnumber: 4, noofpipe: 10, objects:14, equivalencyrules:106, equivalency: 'Y', timeout:' N',equipment:4,pipe:0,equivalencyTime:0 ,totaltime:0.07, throughput: 334},
-  {iterationcount: 1, equipmentnumber: 4, noofpipe: 10, objects:14, equivalencyrules:106, equivalency: 'Y', timeout:' N',equipment:4,pipe:0,equivalencyTime:0 ,totaltime:0.07, throughput: 334},
-  {iterationcount: 1, equipmentnumber: 4, noofpipe: 10, objects:14, equivalencyrules:106, equivalency: 'Y', timeout:' N',equipment:4,pipe:0,equivalencyTime:0 ,totaltime:0.07, throughput: 334},
-  {iterationcount: 1, equipmentnumber: 4, noofpipe: 10, objects:14, equivalencyrules:106, equivalency: 'Y', timeout:' N',equipment:4,pipe:0,equivalencyTime:0 ,totaltime:0.07, throughput: 334},
-  {iterationcount: 1, equipmentnumber: 4, noofpipe: 10, objects:14, equivalencyrules:106, equivalency: 'Y', timeout:' N',equipment:4,pipe:0,equivalencyTime:0 ,totaltime:0.07, throughput: 334},
-  {iterationcount: 1, equipmentnumber: 4, noofpipe: 10, objects:14, equivalencyrules:106, equivalency: 'Y', timeout:' N',equipment:4,pipe:0,equivalencyTime:0 ,totaltime:0.07, throughput: 334},
-  {iterationcount: 1, equipmentnumber: 4, noofpipe: 10, objects:14, equivalencyrules:106, equivalency: 'Y', timeout:' N',equipment:4,pipe:0,equivalencyTime:0 ,totaltime:0.07, throughput: 334},
-  {iterationcount: 1, equipmentnumber: 4, noofpipe: 10, objects:14, equivalencyrules:106, equivalency: 'Y', timeout:' N',equipment:4,pipe:0,equivalencyTime:0 ,totaltime:0.07, throughput: 334},
+  // {iterationcount: 1, equipmentnumber: 4, noofpipe: 10, objects:14, equivalencyrules:106, equivalency: 'Y', timeout:' N',equipment:4,pipe:0,equivalencyTime:0 ,totaltime:0.07, throughput: 334},
+  // {iterationcount: 1, equipmentnumber: 4, noofpipe: 10, objects:14, equivalencyrules:106, equivalency: 'Y', timeout:' N',equipment:4,pipe:0,equivalencyTime:0 ,totaltime:0.07, throughput: 334},
+  // {iterationcount: 1, equipmentnumber: 4, noofpipe: 10, objects:14, equivalencyrules:106, equivalency: 'Y', timeout:' N',equipment:4,pipe:0,equivalencyTime:0 ,totaltime:0.07, throughput: 334},
+  // {iterationcount: 1, equipmentnumber: 4, noofpipe: 10, objects:14, equivalencyrules:106, equivalency: 'Y', timeout:' N',equipment:4,pipe:0,equivalencyTime:0 ,totaltime:0.07, throughput: 334},
+  // {iterationcount: 1, equipmentnumber: 4, noofpipe: 10, objects:14, equivalencyrules:106, equivalency: 'Y', timeout:' N',equipment:4,pipe:0,equivalencyTime:0 ,totaltime:0.07, throughput: 334},
+  // {iterationcount: 1, equipmentnumber: 4, noofpipe: 10, objects:14, equivalencyrules:106, equivalency: 'Y', timeout:' N',equipment:4,pipe:0,equivalencyTime:0 ,totaltime:0.07, throughput: 334},
+  // {iterationcount: 1, equipmentnumber: 4, noofpipe: 10, objects:14, equivalencyrules:106, equivalency: 'Y', timeout:' N',equipment:4,pipe:0,equivalencyTime:0 ,totaltime:0.07, throughput: 334},
+  // {iterationcount: 1, equipmentnumber: 4, noofpipe: 10, objects:14, equivalencyrules:106, equivalency: 'Y', timeout:' N',equipment:4,pipe:0,equivalencyTime:0 ,totaltime:0.07, throughput: 334},
+  // {iterationcount: 1, equipmentnumber: 4, noofpipe: 10, objects:14, equivalencyrules:106, equivalency: 'Y', timeout:' N',equipment:4,pipe:0,equivalencyTime:0 ,totaltime:0.07, throughput: 334},
+  // {iterationcount: 1, equipmentnumber: 4, noofpipe: 10, objects:14, equivalencyrules:106, equivalency: 'Y', timeout:' N',equipment:4,pipe:0,equivalencyTime:0 ,totaltime:0.07, throughput: 334},
 
 ];
 
@@ -36,11 +49,20 @@ const ELEMENT_DATA: PeriodicElement[] = [
   styleUrls: ['./table-dumb.component.scss']
 })
 export class TableDumpComponent implements OnInit {
-  displayedColumns: string[] = ['iterationcount', 'equipmentnumber', 'noofpipe','objects', 'equivalencyrules','equivalency','timeout','equipment','pipe','equivalencyTime','totaltime','throughput'];
-  dataSource = ELEMENT_DATA;
+  displayedColumns: string[] = ['equipments', 'lines','numberOfObjects', 'numberOfRulesChecked','equivalency','isTimedOut','equipmentPlacementTime','pipeRouterTime','equivalencyTime','totalElpsedTime','throughput'];
+  dataSource: any[];
   constructor() { }
+@Input() testdata: any;
 
   ngOnInit() {
+    console.log(this.testdata);
+  }
+  
+
+  ngOnChanges() {
+    console.log(this.testdata);
+    this.dataSource = this.testdata;
+    
   }
 
 }
