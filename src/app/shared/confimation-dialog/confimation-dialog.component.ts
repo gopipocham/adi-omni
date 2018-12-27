@@ -18,4 +18,9 @@ export class ConfimationDialogComponent implements OnInit {
   onNoClick(): void {
     this.dialogRef.close();
   }
+
+  dispatchViewTableEvent(){
+    this.dialogRef.close('1');
+  }
+
 }
