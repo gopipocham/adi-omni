@@ -1,7 +1,8 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, OnInit, ViewChild, Output } from '@angular/core';
 import { TestService } from 'src/app/services/test.service';
 import {ConfimationDialogComponent} from 'src/app/shared/confimation-dialog/confimation-dialog.component'
-import { MatDialog } from '@angular/material';
+import {MatDialog, MatDialogRef} from '@angular/material';
+import { MatTabGroup } from '@angular/material';
 import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
@@ -10,8 +11,11 @@ import { NgxSpinnerService } from 'ngx-spinner';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
+  @ViewChild(MatTabGroup) tabGroup: MatTabGroup;
   nodedata: any[];
+  dialogueRef: MatDialogRef<ConfimationDialogComponent>;
   constructor(private testService : TestService, public dialog: MatDialog, private spinner: NgxSpinnerService) { }
+  
   ngOnInit() {
   }
   postNodeValue(testnodes): void{
@@ -21,11 +25,13 @@ export class DashboardComponent implements OnInit {
       console.log(this.nodedata);
       if(data.success === true) {
           this.spinner.hide();
-        const dialogRef = this.dialog.open( ConfimationDialogComponent , {
+        this.dialogueRef = this.dialog.open( ConfimationDialogComponent , {
           width: '700px',
+        });
+          this.dialogueRef.afterClosed().subscribe(index => {
+          this.tabGroup.selectedIndex = index;
         });
       }
     });
-    
   }
 }
