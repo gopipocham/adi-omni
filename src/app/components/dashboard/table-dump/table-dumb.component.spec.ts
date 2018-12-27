@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TableDumpComponent } from './table-dump.component';
+import { TableDumpComponent } from './table-dumb.component';
 
 describe('TableDumpComponent', () => {
   let component: TableDumpComponent;

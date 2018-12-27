@@ -1,4 +1,5 @@
 import { Component, OnInit, Output } from '@angular/core';
+import { TestService } from 'src/app/services/test.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,11 +8,13 @@ import { Component, OnInit, Output } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
+  constructor(private testService : TestService) { }
   ngOnInit() {
   }
-  postNodeValue(testnodes) {
-    console.log(testnodes);
+  postNodeValue(testnodes): void{
+    this.testService.postTestValues(testnodes).subscribe((data: any) => {
+      console.log(data);
+    });
     
   }
 }
