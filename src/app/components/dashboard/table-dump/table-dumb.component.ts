@@ -28,19 +28,7 @@ export interface PeriodicElement {
   throughput: number;
 }
 
-const ELEMENT_DATA: PeriodicElement[] = [
-  // {iterationcount: 1, equipmentnumber: 4, noofpipe: 10, objects:14, equivalencyrules:106, equivalency: 'Y', timeout:' N',equipment:4,pipe:0,equivalencyTime:0 ,totaltime:0.07, throughput: 334},
-  // {iterationcount: 1, equipmentnumber: 4, noofpipe: 10, objects:14, equivalencyrules:106, equivalency: 'Y', timeout:' N',equipment:4,pipe:0,equivalencyTime:0 ,totaltime:0.07, throughput: 334},
-  // {iterationcount: 1, equipmentnumber: 4, noofpipe: 10, objects:14, equivalencyrules:106, equivalency: 'Y', timeout:' N',equipment:4,pipe:0,equivalencyTime:0 ,totaltime:0.07, throughput: 334},
-  // {iterationcount: 1, equipmentnumber: 4, noofpipe: 10, objects:14, equivalencyrules:106, equivalency: 'Y', timeout:' N',equipment:4,pipe:0,equivalencyTime:0 ,totaltime:0.07, throughput: 334},
-  // {iterationcount: 1, equipmentnumber: 4, noofpipe: 10, objects:14, equivalencyrules:106, equivalency: 'Y', timeout:' N',equipment:4,pipe:0,equivalencyTime:0 ,totaltime:0.07, throughput: 334},
-  // {iterationcount: 1, equipmentnumber: 4, noofpipe: 10, objects:14, equivalencyrules:106, equivalency: 'Y', timeout:' N',equipment:4,pipe:0,equivalencyTime:0 ,totaltime:0.07, throughput: 334},
-  // {iterationcount: 1, equipmentnumber: 4, noofpipe: 10, objects:14, equivalencyrules:106, equivalency: 'Y', timeout:' N',equipment:4,pipe:0,equivalencyTime:0 ,totaltime:0.07, throughput: 334},
-  // {iterationcount: 1, equipmentnumber: 4, noofpipe: 10, objects:14, equivalencyrules:106, equivalency: 'Y', timeout:' N',equipment:4,pipe:0,equivalencyTime:0 ,totaltime:0.07, throughput: 334},
-  // {iterationcount: 1, equipmentnumber: 4, noofpipe: 10, objects:14, equivalencyrules:106, equivalency: 'Y', timeout:' N',equipment:4,pipe:0,equivalencyTime:0 ,totaltime:0.07, throughput: 334},
-  // {iterationcount: 1, equipmentnumber: 4, noofpipe: 10, objects:14, equivalencyrules:106, equivalency: 'Y', timeout:' N',equipment:4,pipe:0,equivalencyTime:0 ,totaltime:0.07, throughput: 334},
-
-];
+const ELEMENT_DATA: PeriodicElement[] = [];
 
 @Component({
   selector: 'app-table-dump',
