@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TableDumpComponent } from './table-dumb.component';
+import { ConfimationDialogComponent } from './confimation-dialog.component';
 
-describe('TableDumpComponent', () => {
-  let component: TableDumpComponent;
-  let fixture: ComponentFixture<TableDumpComponent>;
+describe('ConfimationDialogComponent', () => {
+  let component: ConfimationDialogComponent;
+  let fixture: ComponentFixture<ConfimationDialogComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TableDumpComponent ]
+      declarations: [ ConfimationDialogComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TableDumpComponent);
+    fixture = TestBed.createComponent(ConfimationDialogComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
