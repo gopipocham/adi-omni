@@ -9,13 +9,13 @@
             <img src="../../../assets/images/save-medium.svg" />
         </div>
         <mat-tab-group>
-            <mat-tab label="Inputs">
+            <mat-tab label="Inputs" #tab [disabled]='!tab.isActive'>
                 <app-input-dump (postNodeValues)="postNodeValue($event)"></app-input-dump>
             </mat-tab>
-            <mat-tab label="Tables">
-                <app-table-dump [testdata]="nodedata"></app-table-dump>
+            <mat-tab label="Tables" #tab [disabled]='!tab.isActive'>
+                <app-table-dump [testdata]="nodedata" (emitTabChangeEvent)="dispatchTabChangeEvent($event)"></app-table-dump>
             </mat-tab>
-            <mat-tab label="Graphs"> Content 3 </mat-tab>
+            <mat-tab label="Graphs" #tab [disabled]='!tab.isActive'> Content 3 </mat-tab>
         </mat-tab-group>
     </div>
 </div>
