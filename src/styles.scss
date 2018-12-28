@@ -24,6 +24,7 @@ body {
     height: calc(100vh - 370px)!important;
     overflow: auto;
     padding: 45px 35px;
+    position: relative;
 }
 
 .mat-form-field-infix {
@@ -186,4 +187,53 @@ body {
 
 .pt20 {
     padding-top: 20px;
+}
+
+.cdk-overlay-backdrop.cdk-overlay-backdrop-showing {
+    opacity: 0!important;
+}
+
+.mat-dialog-container {
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
+    background-color: #2867FA;
+    padding: 10px 24px!important;
+}
+
+.mat-dialog-container {
+    border-radius: 2px!important;
+    color: #fff;
+}
+
+.mat-dialog-content {
+    display: flex !important;
+    margin: 0!important;
+}
+
+.modal-btn {
+    background-color: transparent;
+    border: none;
+    color: $white;
+    &:focus {
+        outline: none
+    }
+}
+
+.partetion {
+    border-right: 1px solid #5B8BFB;
+    width: 1px;
+    display: flex;
+    margin-right: 20px;
+    padding: 30px 10px;
+}
+
+.btn-pos-abs {
+    position: absolute;
+    bottom: 25px;
+    right: 0;
+    left: 0;
+    margin: auto;
+}
+
+.black-overlay {
+    background-color: #fff!important;
 }

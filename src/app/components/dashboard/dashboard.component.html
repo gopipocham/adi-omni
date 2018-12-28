@@ -1,9 +1,6 @@
-<ngx-spinner
-bdColor = "rgba(51, 51, 51, 0.8)"
-size = "default"
-color = "#ea0707"
-type = "ball-clip-rotate"
-> <p style="font-size: 20px; color: white">Loading...</p></ngx-spinner>
+<ngx-spinner bdColor="rgba(51, 51, 51, 0.8)" size="default" color="#2867FA" type="ball-clip-rotate">
+    <p style="font-size: 20px; color: #2867FA">Loading...</p>
+</ngx-spinner>
 <div class="body-container">
     <div class="container-box form-section">
         <div class="tab-icons">
@@ -15,8 +12,8 @@ type = "ball-clip-rotate"
             <mat-tab label="Inputs">
                 <app-input-dump (postNodeValues)="postNodeValue($event)"></app-input-dump>
             </mat-tab>
-            <mat-tab label="Tables"> 
-            <app-table-dump [testdata]="nodedata"></app-table-dump>    
+            <mat-tab label="Tables">
+                <app-table-dump [testdata]="nodedata"></app-table-dump>
             </mat-tab>
             <mat-tab label="Graphs"> Content 3 </mat-tab>
         </mat-tab-group>
