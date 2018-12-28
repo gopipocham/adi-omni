@@ -42,7 +42,7 @@
     <ng-container matColumnDef="pipeRouterTime">
         <th mat-header-cell *matHeaderCellDef>Pipe Router Time(Secs)</th>
         <td mat-cell *matCellDef="let element"> {{element.pipeRouterTime}} </td>
-        <td mat-footer-cell *matFooterCellDef> {{totalobj.pipeRouterTime}} </td>
+        <td mat-footer-cell *matFooterCellDef> {{totalobj.pipeRouterTime | number}} </td>
     </ng-container>
     <ng-container matColumnDef="equivalencyTime">
         <th mat-header-cell *matHeaderCellDef>Equivalency (Check Time Secs)</th>
