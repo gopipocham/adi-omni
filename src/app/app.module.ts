@@ -13,6 +13,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { TableDumpComponent } from './components/dashboard/table-dump/table-dumb.component';
 import { ConfimationDialogComponent } from './shared/confimation-dialog/confimation-dialog.component';
+import { ErrorMsgComponent } from './shared/error-msg/error-msg.component';
 
 @NgModule({
   declarations: [
@@ -22,9 +23,11 @@ import { ConfimationDialogComponent } from './shared/confimation-dialog/confimat
     InputDumpComponent,
     TableDumpComponent,
     ConfimationDialogComponent,
+    ErrorMsgComponent,
   ],
   entryComponents: [
-    ConfimationDialogComponent
+    ConfimationDialogComponent,
+    ErrorMsgComponent
   ],
   imports: [
     BrowserModule,

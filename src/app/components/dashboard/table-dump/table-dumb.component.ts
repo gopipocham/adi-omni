@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 
 export interface PeriodicElement {
@@ -53,8 +52,8 @@ export class TableDumpComponent implements OnInit {
   dataSource: any[];
   totalobj = {};
   constructor() { }
-@Input() testdata: any;
-
+  @Input() testdata: any;
+  @Output() emitTabChangeEvent = new EventEmitter();
   ngOnInit() {
     console.log(this.testdata);
   }
@@ -67,5 +66,7 @@ export class TableDumpComponent implements OnInit {
       this.dataSource.splice(-1,1)
     }
   }
-
+  dispatchTabChangeEvent(){
+    this.emitTabChangeEvent.emit(0);
+  }
 }

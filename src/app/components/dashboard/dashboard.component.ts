@@ -4,6 +4,7 @@ import {ConfimationDialogComponent} from 'src/app/shared/confimation-dialog/conf
 import {MatDialog, MatDialogRef} from '@angular/material';
 import { MatTabGroup } from '@angular/material';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { ErrorMsgComponent } from 'src/app/shared/error-msg/error-msg.component';
 
 @Component({
   selector: 'app-dashboard',
@@ -14,17 +15,23 @@ export class DashboardComponent implements OnInit {
   @ViewChild(MatTabGroup) tabGroup: MatTabGroup;
   nodedata: any[];
   dialogueRef: MatDialogRef<ConfimationDialogComponent>;
+  
   constructor(private testService : TestService, public dialog: MatDialog, private spinner: NgxSpinnerService) { }
   
   ngOnInit() {
   }
+
+  dispatchTabChangeEvent(index){
+    this.tabGroup.selectedIndex = index;
+  }
+
   postNodeValue(testnodes): void{
     this.spinner.show();
     this.testService.postTestValues(testnodes).subscribe((data: any) => {
       this.nodedata= data.results;
       console.log(this.nodedata);
       if(data.success === true) {
-          this.spinner.hide();
+        this.spinner.hide();
         this.dialogueRef = this.dialog.open( ConfimationDialogComponent , {
           width: '700px',
         });
@@ -32,6 +39,16 @@ export class DashboardComponent implements OnInit {
           this.tabGroup.selectedIndex = index;
         });
       }
+    }, error =>{
+      this.spinner.hide();
+      const dialogRef = this.dialog.open( ErrorMsgComponent , {
+        width: '700px',
+      });
+      dialogRef.afterClosed().subscribe(isTryagain => {
+        if(isTryagain == true) {
+          this.postNodeValue(testnodes);
+        }
+      });
     });
   }
 }
