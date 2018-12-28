@@ -1,11 +1,12 @@
-<div mat-dialog-content class="custom-width-modal">
-  <div class="modal-body">
-      <div class="input-group h-center">
-        There was an error completing the test
-      </div>
-  </div>
-  <div class="modal-footer">
-      <button (click)="onNoClick()" tabindex="-1" class="btn text-center add-catbtn btn-fullwidth">CLOSE </button>
-      <button type="button" (click)="dispatchTryAgainEvent(true)" class="btn btn-primary" >TRY AGAIN </button>
-  </div>
+<div mat-dialog-content class="custom-width-modal error-modal">
+    <div class="modal-body  pull-left">
+        <div style="padding-top:18px">
+            There was an error completing the test
+        </div>
+    </div>
+    <div class="modal-footer pull-right flex">
+        <button type="button" (click)="dispatchTryAgainEvent(true)" class="modal-btn">TRY AGAIN </button>
+        <div class="partetion"></div>
+        <button (click)="onNoClick()" tabindex="-1" class="modal-btn">CLOSE </button>
+    </div>
 </div>

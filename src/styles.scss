@@ -195,13 +195,25 @@ body {
 
 .mat-dialog-container {
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
-    background-color: #2867FA;
-    padding: 10px 24px!important;
-}
-
-.mat-dialog-container {
     border-radius: 2px!important;
     color: #fff;
+    padding: 0!important;
+}
+
+.success-modal {
+    background-color: #2867FA;
+    padding: 10px 24px!important;
+    .partetion {
+        border-right: 1px solid #5B8BFB;
+    }
+}
+
+.error-modal {
+    background-color: #FF4C4E;
+    padding: 10px 24px!important;
+    .partetion {
+        border-right: 1px solid #FF8082;
+    }
 }
 
 .mat-dialog-content {
@@ -219,7 +231,6 @@ body {
 }
 
 .partetion {
-    border-right: 1px solid #5B8BFB;
     width: 1px;
     display: flex;
     margin-right: 20px;
@@ -236,4 +247,5 @@ body {
 
 .black-overlay {
     background-color: #fff!important;
+    opacity: 0.5;
 }
