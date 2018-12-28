@@ -225,6 +225,7 @@ body {
     background-color: transparent;
     border: none;
     color: $white;
+    cursor: pointer;
     &:focus {
         outline: none
     }
@@ -248,4 +249,11 @@ body {
 .black-overlay {
     background-color: #fff!important;
     opacity: 0.5;
+}
+
+.error-msg-t {
+    padding-top: 18px;
+    img {
+        margin-right: 14px
+    }
 }
