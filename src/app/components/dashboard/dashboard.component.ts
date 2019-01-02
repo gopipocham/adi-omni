@@ -15,29 +15,46 @@ export class DashboardComponent implements OnInit {
   @ViewChild(MatTabGroup) tabGroup: MatTabGroup;
   nodedata: any[];
   dialogueRef: MatDialogRef<ConfimationDialogComponent>;
-  
+  private stompClient = null;
+  greetings: string[] = [];
   constructor(private testService : TestService, public dialog: MatDialog, private spinner: NgxSpinnerService) { }
   
   ngOnInit() {
+   //
   }
+
+  setConnected(connected: boolean) {
+    // this.disabled = !connected;
+
+    if (connected) {
+      this.greetings = [];
+    }
+  }
+
+  showGreeting(message) {
+    this.greetings.push(message);
+  }
+
+ 
 
   dispatchTabChangeEvent(index){
     this.tabGroup.selectedIndex = index;
   }
 
   postNodeValue(testnodes): void{
-    this.spinner.show();
+    // this.spinner.show();
+    this.tabGroup.selectedIndex = 1;
     this.testService.postTestValues(testnodes).subscribe((data: any) => {
       this.nodedata= data.results;
       console.log(this.nodedata);
       if(data.success === true) {
-        this.spinner.hide();
-        this.dialogueRef = this.dialog.open( ConfimationDialogComponent , {
-          width: '700px',
-        });
-          this.dialogueRef.afterClosed().subscribe(index => {
-          this.tabGroup.selectedIndex = index;
-        });
+        // this.spinner.hide();
+        // this.dialogueRef = this.dialog.open( ConfimationDialogComponent , {
+        //   width: '700px',
+        // });
+        //   this.dialogueRef.afterClosed().subscribe(index => {
+        //   this.tabGroup.selectedIndex = index;
+        // });
       }
     }, error =>{
       this.spinner.hide();

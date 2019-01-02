@@ -44,10 +44,10 @@
         <td mat-cell *matCellDef="let element"> {{element.pipeRouterTime}} </td>
         <td mat-footer-cell *matFooterCellDef> {{totalobj.pipeRouterTime}} </td>
     </ng-container>
-    <ng-container matColumnDef="equivalencyTime">
+    <ng-container matColumnDef="equivalencyVerifiedTime">
         <th mat-header-cell *matHeaderCellDef>Equivalency (Check Time Secs)</th>
-        <td mat-cell *matCellDef="let element"> {{element.equivalencyTime}} </td>
-        <td mat-footer-cell *matFooterCellDef> {{totalobj.equivalencyTime}} </td>
+        <td mat-cell *matCellDef="let element"> {{element.equivalencyVerifiedTime}} </td>
+        <td mat-footer-cell *matFooterCellDef> {{totalobj.equivalencyVerifiedTime}} </td>
     </ng-container>
     <ng-container matColumnDef="totalElpsedTime">
         <th mat-header-cell *matHeaderCellDef>Total Time(Mins)</th>
@@ -63,6 +63,13 @@
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     <tr mat-footer-row *matFooterRowDef="displayedColumns"></tr>
 </table>
+<!-- <mat-card 
+   style="display: flex; justify-content: center; align-items: center">
+  <mat-progress-spinner 
+    color="primary" 
+    mode="indeterminate">
+  </mat-progress-spinner>
+</mat-card> -->
 <div class="text-center pt20">
     <button class="adi-btn" (click)="dispatchTabChangeEvent()">Run New Test</button>
 </div>
