@@ -3,6 +3,7 @@ import * as Stomp from 'stompjs';
 import * as SockJS from 'sockjs-client';
 import { BehaviorSubject } from 'rxjs'
 import  TableModel from 'src/app/model/table-model';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 
 export interface PeriodicElement {
@@ -35,15 +36,18 @@ export class TableDumpComponent implements OnInit {
   totalobj = {};
   private stompClient = null;
   greetings: string[] = [];
-  constructor(private ref: ChangeDetectorRef) { }
+  isExpansionDetailRow = true;//(i: number, row: Object) => row.hasOwnProperty('detailRow');;
+  constructor(private ref: ChangeDetectorRef,private spinner: NgxSpinnerService) { }
   @Input() testdata: any;
   @Output() emitTabChangeEvent = new EventEmitter();
   tableData:TableModel;
+  loading: false;
   ngOnInit() {
     //console.log(this.testdata);
+    // this.dataSource.next([...this.dataSource.getValue(), {iterationcount:1,equipments:2}]);
+    // this.dataSource.next([...this.dataSource.getValue(), {iterationcount:2,equipments:3}]);
     const socket = new SockJS('http://3.84.150.172:8080/aditazz-endpoint');
     this.stompClient = Stomp.over(socket);
-
     const _this = this;
     this.stompClient.connect({}, function (frame) {
       _this.setConnected(true);
@@ -52,11 +56,14 @@ export class TableDumpComponent implements OnInit {
       _this.stompClient.subscribe('/data/tableData', function (hello) {
         //_this.showGreeting(hello.body);
         // alert(hello.body);
+        alert(hello.body);
         _this.showGreeting(JSON.parse(hello.body));
       });
     });
   }
   ngOnChanges() {
+    // this.dataSource.next([...this.dataSource.getValue(), {iterationcount:1,equipments:2}]);
+    // this.dataSource.next([...this.dataSource.getValue(), {iterationcount:2,equipments:3,detailRow:true}]);
    // this.dataSource = this.tempSource;
     // console.log(this.testdata);
     // this.dataSource = this.testdata;
@@ -75,7 +82,9 @@ export class TableDumpComponent implements OnInit {
     }
   }
   showGreeting(message) {
+    alert(message.results[0]);
     if(message.total == true) {
+      this.isExpansionDetailRow = false;
       this.totalobj = message.results[0];
     } else
     this.dataSource.next([...this.dataSource.getValue(), message.results[0]]);

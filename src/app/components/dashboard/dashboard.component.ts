@@ -57,7 +57,7 @@ export class DashboardComponent implements OnInit {
         // });
       }
     }, error =>{
-      this.spinner.hide();
+      // this.spinner.hide();
       const dialogRef = this.dialog.open( ErrorMsgComponent , {
         width: '700px',
       });
