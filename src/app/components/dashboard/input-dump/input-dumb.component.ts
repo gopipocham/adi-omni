@@ -6,8 +6,8 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./input-dumb.component.scss']
 })
 export class InputDumpComponent implements OnInit {
-  numberOfNodes = [4,8]
-  maximumnodes = [8,16]
+  numberOfNodes = [4,8,16,32,64,128,256]
+  maximumnodes = [8,16,32,64,128,256]
   incrementsize = [2,4]
   overalltime = [120]
   optimizationLimit = [10]

@@ -29,7 +29,7 @@ const ELEMENT_DATA: PeriodicElement[] = [];
   styleUrls: ['./table-dumb.component.scss']
 })
 export class TableDumpComponent implements OnInit {
-  displayedColumns: string[] = ['iterationcount','equipments', 'lines','numberOfObjects', 'numberOfRulesChecked','equivalency','isTimedOut','equipmentPlacementTime','pipeRouterTime','equivalencyVerifiedTime','totalElpsedTime','throughput'];
+  displayedColumns: string[] = ['iterationcount','equipments', 'lines','numberOfObjects', 'numberOfRulesChecked','equivalency','isTimedOut','equipmentPlacementTime','pipeRouterTime','equivalencyVerifiedTime','totalElpsedTime','throughput','OutputFiles'];
   // dataSource:any = [];
   dataSource = new BehaviorSubject([]);
   tempSource:any = [];
@@ -46,7 +46,8 @@ export class TableDumpComponent implements OnInit {
     //console.log(this.testdata);
     // this.dataSource.next([...this.dataSource.getValue(), {iterationcount:1,equipments:2}]);
     // this.dataSource.next([...this.dataSource.getValue(), {iterationcount:2,equipments:3}]);
-    const socket = new SockJS('http://3.84.150.172:8080/aditazz-endpoint');
+    //3.84.150.172
+    const socket = new SockJS('http://192.168.1.18:8080/aditazz-endpoint');
     this.stompClient = Stomp.over(socket);
     const _this = this;
     this.stompClient.connect({}, function (frame) {
@@ -56,7 +57,6 @@ export class TableDumpComponent implements OnInit {
       _this.stompClient.subscribe('/data/tableData', function (hello) {
         //_this.showGreeting(hello.body);
         // alert(hello.body);
-        alert(hello.body);
         _this.showGreeting(JSON.parse(hello.body));
       });
     });
@@ -82,7 +82,6 @@ export class TableDumpComponent implements OnInit {
     }
   }
   showGreeting(message) {
-    alert(message.results[0]);
     if(message.total == true) {
       this.isExpansionDetailRow = false;
       this.totalobj = message.results[0];
@@ -91,5 +90,8 @@ export class TableDumpComponent implements OnInit {
     console.log(this.totalobj);
     // this.totalobj = message[message.length-1];
     // console.log(this.totalobj);
+  }
+  showAlert(outputMessage){
+    alert(outputMessage);
   }
 }
