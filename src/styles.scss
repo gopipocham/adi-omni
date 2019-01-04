@@ -257,3 +257,11 @@ body {
         margin-right: 14px
     }
 }
+
+.mat-raised-button[disabled][disabled] {
+    border:1px solid rgba(0,0,0,.12);
+}
+
+.mandatory{
+    color: rgb(211, 11, 11);
+}
